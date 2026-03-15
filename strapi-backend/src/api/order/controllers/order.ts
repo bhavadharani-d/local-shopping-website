@@ -17,10 +17,13 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
         // Using 'order_status' to match your Strapi setup
         ctx.request.body.data.token = tokenNumber;
         ctx.request.body.data.order_status = 'Order Received';
+        ctx.request.body.data.publishedAt = new Date();
+
+        // Extract items to avoid Strapi validation error
+        const items = ctx.request.body.data.items;
+        delete ctx.request.body.data.items;
 
         const response = await super.create(ctx);
-
-        const { items } = ctx.request.body.data;
 
         if (items && Array.isArray(items)) {
             for (const item of items) {

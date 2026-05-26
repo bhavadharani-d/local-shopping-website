@@ -12,26 +12,38 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
-    "description": {
-      "type": "string"
+    "stock": {
+      "type": "integer",
+      "default": 0
     },
     "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
-    "stock": {
-      "type": "integer"
+    "category": {
+      "type": "string"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "costPrice": {
+      "type": "decimal",
+      "required": false,
+      "default": 0
     }
   }
 }

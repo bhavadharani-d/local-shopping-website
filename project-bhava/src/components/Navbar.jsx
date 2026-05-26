@@ -11,7 +11,7 @@ const Navbar = ({ cartCount }) => {
     <nav className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg border-t border-slate-100 px-6 py-3 z-50 md:top-0 md:bottom-auto md:border-t-0 md:border-b">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
         <Link to="/" className="hidden md:flex items-center gap-2 text-indigo-600 font-black text-2xl tracking-tighter">
-          BHAVA SHOP
+          SMART SHOP
         </Link>
         
         <div className="flex justify-around items-center w-full md:w-auto md:gap-8">

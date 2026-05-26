@@ -7,29 +7,71 @@
     "displayName": "Order"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "token": {
-      "type": "integer"
+    "tokenNumber": {
+      "type": "integer",
+      "unique": true
     },
-    "total": {
-      "type": "decimal"
+    "items": {
+      "type": "json",
+      "required": true
     },
-    "order_status": {
+    "totalAmount": {
+      "type": "decimal",
+      "required": true
+    },
+    "status": {
       "type": "enumeration",
       "enum": [
-        "Order Received",
+        "Received",
+        "Accepted",
         "Preparing",
         "Ready",
-        "Delivered"
-      ]
+        "Collected"
+      ],
+      "default": "Received"
     },
-    "products": {
+    "customerName": {
+      "type": "string"
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "customerAddress": {
+      "type": "text"
+    },
+    "orderType": {
+      "type": "enumeration",
+      "enum": [
+        "Pickup"
+      ],
+      "default": "Pickup"
+    },
+    "shopName": {
+      "type": "string"
+    },
+    "shop": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
+      "relation": "manyToOne",
+      "target": "api::shop.shop",
+      "inversedBy": "orders"
+    },
+    "pickupTime": {
+      "type": "datetime"
+    },
+    "orderNotes": {
+      "type": "text"
+    },
+    "totalCost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "totalProfit": {
+      "type": "decimal",
+      "default": 0
     }
   }
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:1337/api';
-const UPLOAD_URL = 'http://localhost:1337/api/upload';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337/api';
+const UPLOAD_URL = `${API_URL}/upload`;
 
 const api = axios.create({
   baseURL: API_URL,

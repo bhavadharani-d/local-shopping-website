@@ -1,13 +1,13 @@
-# QR-Based Local Shopping System 🛍️
+# Local Shopping System 
 
 A complete full-stack solution for local shops to implement QR-based digital ordering. Customers can scan a QR code, browse products, place orders, and track status in real-time.
 
-## 🚀 Project Overview
+##  Project Overview
 This project is designed to eliminate queues in local shops. 
 - **Customer Side**: React-based PWA/Mobile-friendly web app.
 - **Shopkeeper Side**: Strapi Admin Panel for inventory and order management.
 
-## 📁 Folder Structure
+##  Folder Structure
 ```text
 local-shopping-website/
 ├── project-bhava/         # React Frontend
@@ -24,17 +24,17 @@ local-shopping-website/
     └── package.json
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend**: React 19, Vite, Tailwind CSS 4, Lucide Icons, Axios.
 - **Backend**: Strapi 5 (Headless CMS).
 - **Database**: SQLite (Perfect for local storage and fast development).
 
-## ⚙️ Backend Logic (Custom Features)
+##  Backend Logic (Custom Features)
 1. **Token Generation**: Implemented in `strapi-backend/src/api/order/content-types/order/lifecycles.ts`. It generates unique incremental tokens (e.g., #6134, #6135).
 2. **Inventory Management**: Automatically reduces stock after every successful order.
 3. **Low Stock Alerts**: UI highlights products with fewer than 5 items in stock.
 
-## 🌐 API Examples
+##  API Examples
 
 ### Get All Products
 `GET /api/products?populate=*`
@@ -55,7 +55,7 @@ local-shopping-website/
 ### Track Order
 `GET /api/orders?filters[tokenNumber][$eq]=6134`
 
-## 📲 How to Use
+##  How to Use
 1. **Start Backend**: Go to `strapi-backend` and run `npm run develop`.
 2. **Start Frontend**: Go to `project-bhava` and run `npm run dev`.
 3. **Generate QR**: Use any QR Generator for the URL provided by Vite (usually `http://localhost:5173`).
@@ -63,3 +63,10 @@ local-shopping-website/
 
 ---
 *Created for Final Year College Project implementation.*
+
+
+##  Live Demo
+- Frontend: https://local-shopping-website-theta.vercel.app
+- Backend API: https://local-shopping-website.onrender.com
+- Products API: .../api/products
+- Orders API: .../api/orders
